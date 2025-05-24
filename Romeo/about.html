@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speed Star Motors - About Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://i.pinimg.com/736x/10/c8/56/10c8566a296f7a1e119d536b98d89900.jpg') center/cover fixed;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(26, 26, 26, 0.3);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    header:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #0055ff;
+    }
+
+    nav a {
+      color: #fff;
+      padding: 15px 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff8f8;
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .text-logo {
+      font-family: 'Arial', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      position: relative;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                   0 0 20px rgba(0, 119, 255, 0.3),
+                   0 0 30px rgba(0, 119, 255, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .text-logo::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, #0047ab, #0074ff, #0047ab);
+      z-index: -1;
+      border-radius: 15px;
+      opacity: 0.3;
+      filter: blur(10px);
+    }
+
+    .text-logo span {
+      background: linear-gradient(to right, #fff, #0074ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                     0 0 20px rgba(0, 119, 255, 0.3),
+                     0 0 30px rgba(0, 119, 255, 0.2);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                     0 0 30px rgba(0, 119, 255, 0.4),
+                     0 0 40px rgba(0, 119, 255, 0.3);
+      }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 800px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .container h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .container p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .value-card h3 {
+      color: #0074ff;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    footer {
+      background-color: rgba(26, 26, 26, 0.3);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      animation: fadeIn 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="text-logo">
+      <span>Speed Star Motors</span>
+    </div>
+    <h1>About Speed Star Motors</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="parts.html">Spare Parts</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Our Story</h2>
+    <p>Speed Star Motors was founded with a passion for excellence in automotive service and sales. As a premier BMW dealership, we've built our reputation on delivering exceptional quality, unmatched expertise, and personalized service to every customer.</p>
+    
+    <p>Our journey began with a simple mission: to provide automotive enthusiasts with the finest BMW vehicles and services, backed by genuine expertise and dedication to customer satisfaction.</p>
+
+    <div class="values">
+      <div class="value-card">
+        <h3>Excellence</h3>
+        <p>We strive for excellence in every aspect of our business, from vehicle selection to customer service.</p>
+      </div>
+      <div class="value-card">
+        <h3>Integrity</h3>
+        <p>We conduct our business with honesty, transparency, and the highest ethical standards.</p>
+      </div>
+      <div class="value-card">
+        <h3>Innovation</h3>
+        <p>We embrace innovation and stay at the forefront of automotive technology and service.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Speed Star Motors. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

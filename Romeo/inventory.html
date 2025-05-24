@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speed Motors - Inventory</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.pinimg.com/736x/dd/ce/91/ddce91bb92faaac2c1be5ebb5a4bcaa9.jpg') center/cover fixed;
+      color: #fff;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    header {
+      background-color: rgba(26, 26, 26, 0.3);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    header:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .text-logo {
+      font-family: 'Arial', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      position: relative;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                   0 0 20px rgba(0, 119, 255, 0.3),
+                   0 0 30px rgba(0, 119, 255, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .text-logo::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, #0047ab, #0074ff, #0047ab);
+      z-index: -1;
+      border-radius: 15px;
+      opacity: 0.3;
+      filter: blur(10px);
+    }
+
+    .text-logo span {
+      background: linear-gradient(to right, #fff, #0074ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                     0 0 20px rgba(0, 119, 255, 0.3),
+                     0 0 30px rgba(0, 119, 255, 0.2);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                     0 0 30px rgba(0, 119, 255, 0.4),
+                     0 0 40px rgba(0, 119, 255, 0.3);
+      }
+    }
+
+    nav {
+      background-color: #0047ab;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0074ff;
+      border-radius: 8px;
+      transform: scale(1.1);
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: slideInDown 1s ease;
+    }
+
+    .car-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .car {
+      background: rgba(26, 26, 26, 0.3);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      width: 280px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .car:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 119, 255, 0.3);
+      background: rgba(26, 26, 26, 0.5);
+    }
+
+    .car img {
+      max-width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .car:hover img {
+      transform: scale(1.05);
+    }
+
+    .car h3 {
+      color: #fff;
+      margin: 15px 0;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
+    }
+
+    .car p {
+      color: #fff;
+      margin: 10px 0;
+      text-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+    }
+
+    .car strong {
+      color: #0074ff;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.4);
+    }
+
+    .specs {
+      font-size: 0.9em;
+      color: #ccc;
+      margin: 10px 0;
+      text-align: left;
+      padding: 0 10px;
+    }
+
+    .specs span {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .specs strong {
+      color: #0074ff;
+      margin-right: 5px;
+    }
+
+    footer {
+      background-color: rgba(26, 26, 26, 0.3);
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="text-logo">
+      <span>Speed Star Motors</span>
+    </div>
+    <h1>Our Inventory</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="parts.html">Spare Parts</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <div class="container">
+    <h2>Available BMWs</h2>
+    <div class="car-list">
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/36/9d/f1/369df1df0e8e2773c5b621f04954a431.jpg" alt="BMW M3 G20">
+        <h3>BMW M3 G20</h3>
+        <p>Price: <strong>BWP 850,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 3.0L Twin-Turbo I6</span>
+          <span><strong>Power:</strong> 510 hp</span>
+          <span><strong>Torque:</strong> 650 Nm</span>
+          <span><strong>0-100 km/h:</strong> 3.8s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="bmw-x5.jpg" alt="BMW X5">
+        <h3>BMW X5</h3>
+        <p>Price: <strong>BWP 1,200,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 523 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 4.3s</span>
+          <span><strong>Transmission:</strong> 8-Speed Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/60/f2/8e/60f28e9a2d9c4f5ab3404d93f360a52d.jpg" alt="BMW 7 Series">
+        <h3>BMW 7 Series</h3>
+        <p>Price: <strong>BWP 8,500,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 530 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 4.2s</span>
+          <span><strong>Transmission:</strong> 8-Speed Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/1200x/fe/d1/b3/fed1b3844d38e8b87fd8958f406fff70.jpg" alt="BMW M4 csl">
+        <h3>BMW M4 CSL</h3>
+        <p>Price: <strong>BWP 2,200,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 3.0L Twin-Turbo I6</span>
+          <span><strong>Power:</strong> 543 hp</span>
+          <span><strong>Torque:</strong> 650 Nm</span>
+          <span><strong>0-100 km/h:</strong> 3.7s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="BMW F90.jpeg" alt="BMW M5 F90">
+        <h3>BMW M5 F90</h3>
+        <p>Price: <strong>BWP 4,200,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 625 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 3.3s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/9c/85/92/9c8592df80962e2506f4d9aa5530492f.jpg" alt="BMW XM">
+        <h3>BMW XM</h3>
+        <p>Price: <strong>BWP 5,200,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8 + Electric</span>
+          <span><strong>Power:</strong> 644 hp</span>
+          <span><strong>Torque:</strong> 800 Nm</span>
+          <span><strong>0-100 km/h:</strong> 4.1s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/82/a2/74/82a274cb8ef8f3229396c936de9e3803.jpg" alt="BMW X6 M">
+        <h3>BMW X6 M</h3>
+        <p>Price: <strong>BWP 2,800,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 617 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 3.8s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/5a/10/9b/5a109baba6e2affb521ed46711233421.jpg" alt="BMW X7 M">
+        <h3>BMW X7 M</h3>
+        <p>Price: <strong>BWP 3,500,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 617 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 4.1s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+      <div class="car">
+        <img src="https://i.pinimg.com/736x/45/02/45/450245a731656ab6fe33d43756dc2b96.jpg" alt="BMW M8 Competition">
+        <h3>BMW M8 Competition</h3>
+        <p>Price: <strong>BWP 4,800,000</strong></p>
+        <div class="specs">
+          <span><strong>Engine:</strong> 4.4L Twin-Turbo V8</span>
+          <span><strong>Power:</strong> 617 hp</span>
+          <span><strong>Torque:</strong> 750 Nm</span>
+          <span><strong>0-100 km/h:</strong> 3.2s</span>
+          <span><strong>Transmission:</strong> 8-Speed M Steptronic</span>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+    <p>© 2025 Speed Motors. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Optional: Fade in cars one by one
+    const cars = document.querySelectorAll('.car');
+    cars.forEach((car, index) => {
+      car.style.opacity = '0';
+      setTimeout(() => {
+        car.style.transition = 'opacity 1s ease';
+        car.style.opacity = '1';
+      }, index * 300);
+    });
+  </script>
+
+</body>
+</html>

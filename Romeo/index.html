@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Motors - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/736x/10/c8/56/10c8566a296f7a1e119d536b98d89900.jpg') center/cover fixed;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(26, 26, 26, 0.3);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        header:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0055ff;
+        }
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff8f8;
+        }
+        .hero {
+            background: rgba(0, 0, 0, 0.7);
+            height: 500px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease;
+            backdrop-filter: blur(3px);
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1s ease;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .btn {
+            background-color: #0047ab;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background-color: #0074ff;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.5);
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes slideIn {
+            from {transform: translateY(-50px);}
+            to {transform: translateY(0);}
+        }
+        footer {
+            background-color: rgba(26, 26, 26, 0.3);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(5px);
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        }
+        .text-logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                        0 0 20px rgba(0, 119, 255, 0.3),
+                        0 0 30px rgba(0, 119, 255, 0.2);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .text-logo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #0047ab, #0074ff, #0047ab);
+            z-index: -1;
+            border-radius: 15px;
+            opacity: 0.3;
+            filter: blur(10px);
+        }
+        .text-logo span {
+            background: linear-gradient(to right, #fff, #0074ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                            0 0 20px rgba(0, 119, 255, 0.3),
+                            0 0 30px rgba(0, 119, 255, 0.2);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                            0 0 30px rgba(0, 119, 255, 0.4),
+                            0 0 40px rgba(0, 119, 255, 0.3);
+            }
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 3s ease-in-out forwards;
+            backdrop-filter: blur(5px);
+        }
+        .welcome-text {
+            font-size: 4em;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: welcomeAnimation 3s ease-in-out forwards;
+            text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                         0 0 30px rgba(0, 119, 255, 0.4),
+                         0 0 40px rgba(0, 119, 255, 0.3);
+        }
+        @keyframes welcomeAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="text-logo">
+            <span>Speed Star Motors</span>
+        </div>
+        <p>Specialists in BMW Sales, Parts & Tuning</p>
+    </header>
+
+    <div class="welcome-overlay">
+        <div class="welcome-text">Welcome</div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="parts.html">Spare Parts</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Precision. Performance. Perfection.</h1>
+        <p>Discover The Ultimate Driving Experience With Speed Star Motors</p>
+        <a href="inventory.html" class="btn">Explore Inventory</a>
+    </section>
+    
+
+    <div class="container">
+        <h2>Welcome to Speed Star Motors</h2>
+        <p>Your trusted BMW dealership for brand-new and pre-owned cars, parts, maintenance, and tuning. Experience the perfect blend of luxury, performance, and innovation with our premium selection of BMW vehicles.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Speed Motors. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('header').addEventListener('mouseover', () => {
+            header.style.transform = 'scale(1.05)';
+        });
+        document.querySelector('header').addEventListener('mouseleave', () => {
+            header.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

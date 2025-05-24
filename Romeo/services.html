@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speed Motors - Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.pinimg.com/1200x/cf/ce/27/cfce271436a2763e1d85d4a524d1e675.jpg') center/cover fixed;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      background-color: rgba(26, 26, 26, 0.3);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    header:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .text-logo {
+      font-family: 'Arial', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      position: relative;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                   0 0 20px rgba(0, 119, 255, 0.3),
+                   0 0 30px rgba(0, 119, 255, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .text-logo::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, #0047ab, #0074ff, #0047ab);
+      z-index: -1;
+      border-radius: 15px;
+      opacity: 0.3;
+      filter: blur(10px);
+    }
+
+    .text-logo span {
+      background: linear-gradient(to right, #fff, #0074ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                     0 0 20px rgba(0, 119, 255, 0.3),
+                     0 0 30px rgba(0, 119, 255, 0.2);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                     0 0 30px rgba(0, 119, 255, 0.4),
+                     0 0 40px rgba(0, 119, 255, 0.3);
+      }
+    }
+
+    nav {
+      background-color: #0047ab;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0074ff;
+      border-radius: 8px;
+      transform: scale(1.1);
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      animation: slideInDown 0.8s ease-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 1.2em;
+      animation: fadeInText 1.5s ease;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      background-color: rgba(26, 26, 26, 0.3);
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="text-logo">
+      <span>Speed Star Motors</span>
+    </div>
+    <h1>Our Services</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="parts.html">Spare Parts</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <div class="container">
+    <h2>BMW Maintenance & High-Performance Tuning</h2>
+    <p>From engine diagnostics to complete overhauls, we provide expert care for your BMW. Our tuning services ensure unmatched speed, control, and performance. Schedule your upgrade today!</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Speed Motors. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.container').style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector('.container').style.transition = 'opacity 1.2s ease-in-out';
+        document.querySelector('.container').style.opacity = 1;
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>

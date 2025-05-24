@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #007BFF;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px;
+    background: url('bmw-banner.jpg') center/cover no-repeat;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Car List */
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.car {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    margin-top: 20px;
+}
+<section class="hero">
+    <video autoplay muted loop id="bg-video">
+        <source src="showroom.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="hero-content">
+        <h1>Precision. Performance. Perfection.</h1>
+        <a href="inventory.html" class="btn">Explore Inventory</a>
+    </div>
+</section>
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.hero-content .btn:hover {
+    background: #0056b3;
+}

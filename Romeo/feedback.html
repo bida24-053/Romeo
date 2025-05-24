@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback - Speed Motors</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://i.pinimg.com/736x/9f/cc/b0/9fccb0b50a1cc352296ca58ee21985aa.jpg') center/cover fixed;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    header {
+      background-color: rgba(26, 26, 26, 0.3);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    header:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .text-logo {
+      font-family: 'Arial', sans-serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      position: relative;
+      text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                   0 0 20px rgba(0, 119, 255, 0.3),
+                   0 0 30px rgba(0, 119, 255, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .text-logo::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, #0047ab, #0074ff, #0047ab);
+      z-index: -1;
+      border-radius: 15px;
+      opacity: 0.3;
+      filter: blur(10px);
+    }
+
+    .text-logo span {
+      background: linear-gradient(to right, #fff, #0074ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(0, 119, 255, 0.5),
+                     0 0 20px rgba(0, 119, 255, 0.3),
+                     0 0 30px rgba(0, 119, 255, 0.2);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(0, 119, 255, 0.6),
+                     0 0 30px rgba(0, 119, 255, 0.4),
+                     0 0 40px rgba(0, 119, 255, 0.3);
+      }
+    }
+
+    nav {
+      background: #0047ab;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #002b6d;
+      border-radius: 10px;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      background: rgba(17, 17, 17, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    label {
+      margin: 10px 0 5px;
+    }
+
+    input, textarea, select {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: rgba(34, 34, 34, 0.5);
+      color: #fff;
+      backdrop-filter: blur(5px);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: rgba(0, 71, 171, 0.7);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    button:hover {
+      background: rgba(0, 116, 255, 0.8);
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(26, 26, 26, 0.3);
+      margin-top: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="text-logo">
+      <span>Speed Star Motors</span>
+    </div>
+    <h1>Customer Feedback</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="parts.html">Spare Parts</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <div class="container">
+    <h2>We'd Love Your Feedback</h2>
+    <form action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="rating">Rate Our Services:</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select</option>
+        <option>★★★★★ - Excellent</option>
+        <option>★★★★ - Good</option>
+        <option>★★★ - Average</option>
+        <option>★★ - Poor</option>
+        <option>★ - Terrible</option>
+      </select>
+
+      <label for="message">Your Feedback:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Speed Motors. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
